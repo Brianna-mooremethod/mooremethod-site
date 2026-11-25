@@ -258,7 +258,7 @@ nav a[aria-current="page"]{color:var(--gold);border-bottom:1px solid var(--gold)
     <p class="eyebrow">Book your class</p>
     <h2 class="big" style="margin-bottom:12px">First classes: Mon, Nov 30 &ndash; Thu, Dec 3</h2>
     
-    <p style="margin:0 0 32px;max-width:720px">Classes run 12:00&ndash;7:30 PM in Atlanta, GA 30312. <strong>Kids &amp; teens and adults always train in separate classes</strong>: kids &amp; teens classes run in the afternoon, and adult classes run in the evening. Choose who you&rsquo;re booking for, then pick a class, day and time. The exact address is shown when you book, and Bri confirms your time within 24 hours.</p>
+    <p style="margin:0 0 32px;max-width:720px">Classes run Monday&ndash;Thursday 11:00 AM&ndash;8:00 PM in Atlanta, GA 30312. Kids &amp; teens and adults choose from the same times, but <strong>they always train in separate classes</strong>: kids &amp; teens never share a class with adults. Choose who you&rsquo;re booking for, then pick a class, day and time. The exact address is shown when you book, and Bri confirms your time within 24 hours.</p>
     <div class="bk">
       <div class="bk-panel">
         <div><p class="bk-step">1 · Who are you booking for?</p>
@@ -406,7 +406,7 @@ if (CONFIG.instagram) document.getElementById("foot").textContent = "@" + CONFIG
 <script>
 (function(){
 var DAYS=[["2026-11-30","Mon, Nov 30"],["2026-12-01","Tue, Dec 1"],["2026-12-02","Wed, Dec 2"],["2026-12-03","Thu, Dec 3"]];
-var TIMES={kids:[["1200","12:00 PM","1:30 PM"],["1330","1:30 PM","3:00 PM"],["1500","3:00 PM","4:30 PM"]],adult:[["1630","4:30 PM","6:00 PM"],["1800","6:00 PM","7:30 PM"]]};
+var TIMES={kids:[["1100","11:00 AM","12:30 PM"],["1230","12:30 PM","2:00 PM"],["1400","2:00 PM","3:30 PM"],["1530","3:30 PM","5:00 PM"],["1700","5:00 PM","6:30 PM"],["1830","6:30 PM","8:00 PM"]],adult:[["1100","11:00 AM","12:30 PM"],["1230","12:30 PM","2:00 PM"],["1400","2:00 PM","3:30 PM"],["1530","3:30 PM","5:00 PM"],["1700","5:00 PM","6:30 PM"],["1830","6:30 PM","8:00 PM"]]};
 var DEPOSIT=(typeof CONFIG!=="undefined"&&CONFIG.bookingUrl)||"";
 var EMAIL="Brianna@mooremethod.org";
 var s={};
@@ -421,7 +421,7 @@ g("bk-aud").addEventListener("click",function(e){var b=e.target.closest(".chip")
   var k=s.aud==="kids";document.querySelectorAll(".kidonly").forEach(function(x){x.hidden=!k;});
   g("bk-nml").textContent=k?"Parent or guardian's full name":"Full name";
   g("bk-phl").textContent=k?"Parent's phone":"Phone";g("bk-eml").textContent=k?"Parent's email":"Email";
-  g("bk-tnote").textContent=k?"Kids & teens classes run 12:00\u20134:30 PM. Each session is 90 minutes.":"Adult classes run 4:30\u20137:30 PM. Each session is 90 minutes.";
+  g("bk-tnote").textContent=k?"Kids & teens classes run 11:00 AM\u20138:00 PM, separate from adults. Each session is 90 minutes.":"Adult classes run 11:00 AM\u20138:00 PM, separate from kids & teens. Each session is 90 minutes.";
   upd();});
 [["bk-svc","svc"],["bk-day","day"],["bk-time","time"]].forEach(function(p){
   g(p[0]).addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;press(g(p[0]),b);s[p[1]]=b;upd();});});
