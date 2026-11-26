@@ -396,12 +396,13 @@ nav a[aria-current="page"]{color:var(--gold);border-bottom:1px solid var(--gold)
 // ===== Bri: fill these in and the page updates everywhere =====
 const CONFIG = {
   bookingUrl: "https://buy.stripe.com/5kQ9AN2nR2481FraVz4AU07",      // $50 deposit Payment Link (live)
-  instagram: "theyadooremoore",       // your handle without @, e.g. "themooremethod"
+  instagram: "themooremethod.academy",       // business handle without @
+  personal: "theyadoremoore",       // Bri's personal handle
   contact: "Brianna@mooremethod.org"          // a phone number or email students can send the message to
 };
 // ==============================================================
 
-if (CONFIG.instagram) document.getElementById("foot").textContent = "@" + CONFIG.instagram + " \u00b7 Atlanta, GA";
+if (CONFIG.instagram) { var ft=document.getElementById("foot"); ft.textContent=""; [[CONFIG.instagram,""],[CONFIG.personal," (Bri)"]].forEach(function(h,i){ if(!h[0]) return; if(i) ft.appendChild(document.createTextNode(" \u00b7 ")); var a=document.createElement("a"); a.href="https://instagram.com/"+h[0]; a.target="_blank"; a.rel="noopener"; a.textContent="@"+h[0]; a.style.color="inherit"; ft.appendChild(a); if(h[1]) ft.appendChild(document.createTextNode(h[1])); }); ft.appendChild(document.createTextNode(" \u00b7 Atlanta, GA")); }
 </script>
 <script>
 (function(){
